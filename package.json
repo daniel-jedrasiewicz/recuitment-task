@@ -21,6 +21,7 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
-        "acorn": "^8.6.0"
+        "acorn": "^8.6.0",
+        "bootstrap": "^5.1.3"
     }
 }
