@@ -23,7 +23,7 @@ class CreateCompaniesTable extends Migration
             $table->string('variable_code', 10);
             $table->string('variable_name', 150);
             $table->string('variable_category', 50);
-            $table->decimal('value', 10, 4, true);
+            $table->decimal('value', 12, 2, true);
             $table->string('industry_code_ANZSIC06', 200);
             $table->timestamps();
         });
