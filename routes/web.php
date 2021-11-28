@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeerController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+require __DIR__ . '/auth.php';
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +22,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [WebController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
-require __DIR__ . '/auth.php';
 
 Route::get('/import', [WebController::class, 'import'])->middleware(['auth'])->name('import');
+
+Route::get('/beers', [BeerController::class, 'index'])->middleware(['auth'])->name('beers');
+
+Route::get('/import/beers', [BeerController::class, 'import'])->middleware(['auth'])->name('import.beers');
