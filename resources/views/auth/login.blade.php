@@ -1,15 +1,3 @@
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style ="position: fixed; ">
-    <div class="flex justify-between h-16">
-        <div class="flex">
-            <!-- Logo -->
-            <div class="flex-shrink-0 flex items-center">
-                <a href="{{ url('/') }}">
-                    <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -41,7 +29,7 @@
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
                                 name="password"
-                                required autocomplete="current-password" />
+                                required autocomplete="current-password"></x-input>
             </div>
 
             <!-- Remember Me -->
@@ -54,14 +42,16 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Przypomnij hasło') }}
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                       href="{{ route('password.request') }}" style="text-decoration: none">
+                        {{ __('Przypomnij hasło') }}</a>
 
                 @endif
 
                 <x-button class="ml-3">
                     {{ __('Zaloguj') }}
                 </x-button>
+
             </div>
         </form>
     </x-auth-card>
