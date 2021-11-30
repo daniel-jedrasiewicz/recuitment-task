@@ -20,15 +20,17 @@
                                required="wypełnij to pole" maxlength="100"/>
                         <br>
                         <br>
+                        <a class="btn btn-dark" href="{{route('import')}}">Pobierz dane z tabeli</a>
                         <button type="submit" class="btn btn-dark">Wyszukaj</button>
                         <a class="btn btn-dark" href="{{route('dashboard')}}">Pokaż wszystkie</a>
+
                     </form>
 
                 </div>
             </div>
         </div>
     </div>
-    <div>
+    <div class = "container">
         <table class="table table-hover table-dark">
             <thead>
             <tr>

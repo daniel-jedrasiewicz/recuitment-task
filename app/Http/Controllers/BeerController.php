@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beer;
+
 use Illuminate\Http\Request;
 
 class BeerController extends Controller
 {
     public function index()
     {
-        return view('beers');
+        $beers = Beer::paginate(40);
+        return view('beers', ['beers' => $beers]);
     }
 
     public function import()

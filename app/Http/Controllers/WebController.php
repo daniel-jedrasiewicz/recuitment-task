@@ -41,18 +41,18 @@ class WebController extends Controller
         return redirect(route('dashboard'));
     }
 
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
 
         $column_name = $request->all()['column_name'] ?? null;
         $query = $request->all()['query'] ?? null;
 
-       if(!empty($column_name)) {
-           $companies = Company::where($column_name, $query)->paginate(40);
-       }
-       else {
-           $companies = Company::paginate(40);
+        if (!empty($column_name)) {
+            $companies = Company::where($column_name, $query)->paginate(40);
+        } else {
+            $companies = Company::paginate(40);
 
-       }
+        }
 
         return view('dashboard', ['companies' => $companies]);
     }

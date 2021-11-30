@@ -22,7 +22,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [WebController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
-
 Route::get('/import', [WebController::class, 'import'])->middleware(['auth'])->name('import');
 
 Route::get('/beers', [BeerController::class, 'index'])->middleware(['auth'])->name('beers');

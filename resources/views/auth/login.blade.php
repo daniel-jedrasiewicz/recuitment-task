@@ -1,3 +1,15 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style ="position: fixed; ">
+    <div class="flex justify-between h-16">
+        <div class="flex">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="{{ url('/') }}">
+                    <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -24,7 +36,7 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                <x-label for="password" :value="__('Hasło')" />
 
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -36,19 +48,19 @@
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Zapamietaj mnie') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
+                        {{ __('Przypomnij hasło') }}
+
                 @endif
 
                 <x-button class="ml-3">
-                    {{ __('Log in') }}
+                    {{ __('Zaloguj') }}
                 </x-button>
             </div>
         </form>

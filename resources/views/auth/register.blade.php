@@ -1,3 +1,15 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style ="position: fixed; ">
+    <div class="flex justify-between h-16">
+        <div class="flex">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="{{ url('/') }}">
+                    <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -14,7 +26,7 @@
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="name" :value="__('Imię')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
@@ -28,7 +40,7 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                <x-label for="password" :value="__('Hasło')" />
 
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -38,7 +50,7 @@
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-label for="password_confirmation" :value="__('Powtórz hasło')" />
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
@@ -47,11 +59,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Logowanie') }}
                 </a>
 
                 <x-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Zarejestruj') }}
                 </x-button>
             </div>
         </form>

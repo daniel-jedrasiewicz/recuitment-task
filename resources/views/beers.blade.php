@@ -8,65 +8,47 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-{{--                    TODO: implement this--}}
-{{--                    <form action="" method="get">--}}
-{{--                        <select name="column_name" class="form-control form-control-lg">--}}
-{{--                            <option value="variable_code">Variable_code</option>--}}
-{{--                            <option value="variable_name">Variable_name</option>--}}
-{{--                            <option value="value">Value</option>--}}
-{{--                        </select>--}}
-{{--                        <br>--}}
-{{--                        <input name="query" class="form-control form-control-lg" type="text" placeholder="Wyszukaj"--}}
-{{--                               required="wypełnij to pole" maxlength="100"/>--}}
-{{--                        <br>--}}
-{{--                        <br>--}}
-{{--                        <button type="submit" class="btn btn-dark">Wyszukaj</button>--}}
-{{--                        <a class="btn btn-dark" href="{{route('dashboard')}}">Pokaż wszystkie</a>--}}
-{{--                    </form>--}}
+                <div class="p-6 bg-white border-b border-gray-200 ">
+                    <form action="" method="get">
+                        <a class="btn btn-dark" href="{{route('import.beers')}}">Pobierz dane z API</a>
+                    </form>
+
 
                 </div>
             </div>
         </div>
     </div>
-    <div>
+
+    <div class="container">
         <table class="table table-hover table-dark">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Year</th>
-                <th scope="col">Industry_aggregation_NZSIOC</th>
-                <th scope="col">Industry_code_NZSIOC</th>
-                <th scope="col">Industry_name_NZSIOC</th>
-                <th scope="col">Units</th>
-                <th scope="col">Variable_code</th>
-                <th scope="col">Variable_name</th>
-                <th scope="col">Category</th>
-                <th scope="col">Value</th>
-                <th scope="col">Industry_code_ANZSIC06</th>
-            </tr>
+                <th scope="col">Price</th>
+                <th scope="col">Name</th>
+                <th scope="col">Rating average</th>
+                <th scope="col">Rating views</th>
+                <th scope="col">Image</th>
+                <th scope="col">Id_Api</th>
             </thead>
             <tbody>
 
-{{--            @foreach($companies as $company)--}}
-{{--                <tr>--}}
+            @foreach($beers as $beer_model)
+                <tr>
 
-{{--                    <td>{{ $company->id }}</td>--}}
-{{--                    <td>{{ $company->year }}</td>--}}
-{{--                    <td>{{ $company->industry_aggregation_NZSIOC }}</td>--}}
-{{--                    <td>{{ $company->industry_code_NZSIOC }}</td>--}}
-{{--                    <td>{{ $company->industry_name_NZSIOC }}</td>--}}
-{{--                    <td>{{ $company->units }}</td>--}}
-{{--                    <td>{{ $company->variable_code }}</td>--}}
-{{--                    <td>{{ $company->variable_name }}</td>--}}
-{{--                    <td>{{ $company->variable_category }}</td>--}}
-{{--                    <td>{{ $company->value }}</td>--}}
-{{--                    <td>{{ $company->industry_code_ANZSIC06 }}</td>--}}
-{{--                </tr>--}}
-{{--            @endforeach--}}
+                    <td>{{ $beer_model->id }}</td>
+                    <td>{{ $beer_model->price }}</td>
+                    <td>{{ $beer_model->name }}</td>
+                    <td>{{ $beer_model->rating_average }}</td>
+                    <td>{{ $beer_model->rating_reviews }}</td>
+                    <td>{{  $beer_model->image }}</td>
+                    <td>{{ $beer_model->id_api }}</td>
 
-{{--            </tbody>--}}
-{{--        </table>--}}
-{{--        {{ $companies->links() }}--}}
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+        {{ $beers->links() }}
+
     </div>
 </x-app-layout>
