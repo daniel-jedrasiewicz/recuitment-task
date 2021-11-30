@@ -9,6 +9,14 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+
+                    @if(session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session()->get('message') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+
                     <form action="" method="get">
                         <select name="column_name" class="form-control form-control-lg">
                             <option value="variable_code">Variable_code</option>
