@@ -38,7 +38,7 @@ class WebController extends Controller
             $company->save();
         };
 
-        return redirect(route('dashboard'))->with('message', 'tabela pobrana pomyślnie' );
+        return redirect(route('dashboard'))->with('message', 'tabela pobrana pomyślnie');
     }
 
     public function index(Request $request)

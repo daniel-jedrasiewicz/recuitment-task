@@ -43,6 +43,6 @@ class BeerController extends Controller
             }
         }
 
-        return redirect(route('beers'))->with('message', 'tabela została zaktualizowana' );;
+        return redirect(route('beers'))->with('message', 'tabela została zaktualizowana');
     }
 }

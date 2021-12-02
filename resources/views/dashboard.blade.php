@@ -11,13 +11,15 @@
                 <div class="p-6 bg-white border-b border-gray-200">
 
                     @if(session()->has('message'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session()->get('message') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session()->get('message') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                     @endif
 
                     <form action="" method="get">
+                        <a class="btn btn-light" href="{{route('import')}}">Pobierz dane do tabeli</a>
+                        <br><br>
                         <select name="column_name" class="form-control form-control-lg">
                             <option value="variable_code">Variable_code</option>
                             <option value="variable_name">Variable_name</option>
@@ -28,17 +30,17 @@
                                required="wypełnij to pole" maxlength="100"/>
                         <br>
                         <br>
-                        <a class="btn btn-dark" href="{{route('import')}}">Pobierz dane z tabeli</a>
+
                         <button type="submit" class="btn btn-dark">Wyszukaj</button>
                         <a class="btn btn-dark" href="{{route('dashboard')}}">Pokaż wszystkie</a>
-
                     </form>
 
                 </div>
             </div>
         </div>
     </div>
-    <div class = "container">
+
+    <div class="container">
         <table class="table table-hover table-dark">
             <thead>
             <tr>
@@ -59,7 +61,6 @@
 
             @foreach($companies as $company)
                 <tr>
-
                     <td>{{ $company->id }}</td>
                     <td>{{ $company->year }}</td>
                     <td>{{ $company->industry_aggregation_NZSIOC }}</td>
@@ -77,5 +78,7 @@
             </tbody>
         </table>
         {{ $companies->links() }}
+
     </div>
 </x-app-layout>
+
